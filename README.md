@@ -1,2 +1,2 @@
 # opp-tracker
-A opportunity tracker for college students
+A opportunity tracker for college students implemented using mern stack
