@@ -1,0 +1,17 @@
+.side-bar {   
+    margin-top: 15px;
+    border-radius: 15px;
+    width: 80%;
+    height: 60vh;
+    background-color:#F8F9FA ;
+    float: right;
+}
+.new-post {
+    
+    border-radius: 5px;
+}
+
+li{
+     list-style: none;
+     line-height: 2rem;
+ }

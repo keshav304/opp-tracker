@@ -1,6 +1,8 @@
 import React, { Fragment } from "react";
 import { Link, withRouter } from "react-router-dom";
 import { isAuth, signout } from "../auth/Helpers";
+import './css/nav.css'
+
 
 const Layout = ({ children, match, history }) => {
   const isActive = (path) => {
@@ -13,29 +15,29 @@ const Layout = ({ children, match, history }) => {
 
   const nav = () => {
     return (
-      <ul className="nav nav-tabs bg-primary">
-        <li className="nav-item">
-          <Link to="/" className=" nav-link" style={isActive("/")}>
-            Home
+      <ul className=" d-flex nav nav-tabs bg-light">
+        <li className="nav-item flex-grow-1 ">
+          <Link to="/" className=" nav-link my-2 fs-5 text-dark" >
+            Opportunity Tracker
           </Link>
         </li>
 
         {!isAuth() && (
-          <Fragment>
-            <li className="nav-item">
+          <Fragment >
+            <li className="nav-item me-3 my-2 nav-btn">
               <Link
                 to="/signup"
-                className=" nav-link"
+                className=" nav-link bg-primary rounded-5"
                 style={isActive("/signup")}
               >
                 Sign up
               </Link>
             </li>
 
-            <li className="nav-item">
+            <li  className="nav-item my-2 me-5 nav-btn">
               <Link
                 to="/signin"
-                className="nav-link"
+                className="nav-link bg-primary rounded-5"
                 style={isActive("/signin")}
               >
                 Sign in
@@ -86,9 +88,9 @@ const Layout = ({ children, match, history }) => {
     );
   };
   return (
-    <Fragment>
+    <Fragment style={{overflowY:"scroll"}}>
       {nav()}
-      <div className="container">{children}</div>
+      <div style={{backgroundColor:"#E3E3E3", height:"100%"}}>{children}</div>
     </Fragment>
   );
 };

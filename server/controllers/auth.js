@@ -143,6 +143,8 @@ export const requireSignin = expressJwt({
   secret: process.env.JWT_SECERT, algorithms: ['HS256'] 
 })
 
+
+// chech=k if signin user is a admin
 export const adminMiddleware = (req,res,next) => {
   User.findById({_id: req.user._id}).exec((err,user)=>{
     if (err || !user){

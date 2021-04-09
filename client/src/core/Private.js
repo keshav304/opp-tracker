@@ -55,7 +55,7 @@ const Private = () => {
         <label className="text-muted">Name</label>
         <input       
          disabled={true}
-          value={role}
+          defaultValue={role}
           type="text"
           className="form-control"
         />
@@ -64,7 +64,7 @@ const Private = () => {
         <label className="text-muted">Name</label>
         <input
           onChange={handleChange("name")}
-          value={name}
+          defaultValue={name}
           type="text"
           className="form-control"
         />
@@ -73,7 +73,7 @@ const Private = () => {
         <label className="text-muted">Email</label>
         <input
         disabled={true}
-          value={email}
+          defaultValue={email}  
           type="email"
           className="form-control"
         />
@@ -82,7 +82,7 @@ const Private = () => {
         <label className="text-muted">Password</label>
         <input
           onChange={handleChange("password")}
-          value={password}
+          defaultValue={password}
           type="password"
           className="form-control"
         />

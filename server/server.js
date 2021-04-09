@@ -6,6 +6,7 @@ import  cors from 'cors';
 import  dotenv from 'dotenv';
 import authRoutes from './routes/auth.js' ;
 import userRoutes from './routes/user.js';
+import postRoutes from './routes/Posts.js';
 
 const app = express();
 dotenv.config();
@@ -24,8 +25,8 @@ if(process.env.NODE_ENV='development'){
 
 //middleware
 app.use('/api', authRoutes); 
-app.use('/api',userRoutes)
-
+app.use('/api',userRoutes);
+app.use('/api',postRoutes)
 
 
 const CONNECTION_URL = process.env.CONNECTION_URL
