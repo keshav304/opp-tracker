@@ -1,10 +1,11 @@
 .side-bar {   
     margin-top: 15px;
     border-radius: 15px;
-    width: 80%;
-    height: 60vh;
+    width: fit-content;
+    height: fit-content;
     background-color:#F8F9FA ;
     float: right;
+    padding: 10px;
 }
 .new-post {
     
@@ -14,4 +15,6 @@
 li{
      list-style: none;
      line-height: 2rem;
+     cursor: pointer;
  }
+

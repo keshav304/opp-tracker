@@ -1,7 +1,6 @@
 import React, { Fragment } from "react";
 import { Link, withRouter } from "react-router-dom";
 import { isAuth, signout } from "../auth/Helpers";
-import './css/nav.css'
 
 
 const Layout = ({ children, match, history }) => {
@@ -47,9 +46,9 @@ const Layout = ({ children, match, history }) => {
         )}
 
         {isAuth() && (
-          <li className="nav-item">
+          <li className="nav-item nav-item my-2 me-5 nav-btn">
             <span
-              className="nav-link"
+              className="nav-link bg-primary rounded-5"
               style={{cursor:'pointer',color:'#fff'}}
               onClick={() => {
                 signout(() => {
@@ -63,9 +62,9 @@ const Layout = ({ children, match, history }) => {
         )}
 
         {isAuth() && isAuth().role==='admin' && (
-          <li className="nav-item">
+          <li className="nav-item nav-item my-2 me-5 nav-btn">
             <Link
-              className="nav-link"
+              className="nav-link bg-primary rounded-5"
               style={isActive("/admin")}
               to='/admin'
             >
@@ -74,9 +73,9 @@ const Layout = ({ children, match, history }) => {
           </li>
         )}
         {isAuth() && isAuth().role==='subscriber' && (
-          <li className="nav-item">
+          <li className="nav-item nav-item my-2 me-5 nav-btn">
             <Link
-              className="nav-link"
+              className="nav-link bg-primary rounded-5"
               style={isActive("/private")}
               to='/private'
             >
@@ -88,10 +87,11 @@ const Layout = ({ children, match, history }) => {
     );
   };
   return (
-    <Fragment style={{overflowY:"scroll"}}>
+    <div >
       {nav()}
-      <div style={{backgroundColor:"#E3E3E3", height:"100%"}}>{children}</div>
-    </Fragment>
+      <div 
+      style={{backgroundColor:"#E3E3E3", height:"100%"}}>{children}</div>
+    </div>
   );
 };
 

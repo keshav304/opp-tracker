@@ -6,10 +6,6 @@ const postSchema = mongoose.Schema({
   description: String,
   detailsLink: String,
   registrationLink: String,
-  registrationActive: {
-    type: Boolean,
-    default: true,
-  },
   category: String,
   likeCount: {
     type: Number,
