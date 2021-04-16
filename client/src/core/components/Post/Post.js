@@ -1,22 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 import moment from "moment";
 import "./style.css";
+import axios from "axios";
+import dotenv from "dotenv";
+import {getCookie} from "../../../auth/Helpers.js"; 
+import { Link, Route } from "react-router-dom";
+
+dotenv.config()
 
 const Post = ({ post }) => {
 
-  const handleLike = (event) => {
-    const isLiked = (event.target.className ===  "bi bi-hand-thumbs-up mx-2") ? 'bi bi-hand-thumbs-up-fill mx-2' :'bi bi-hand-thumbs-up mx-2';
-    event.target.className = isLiked ;
-  }
-
   const handleBookmark = (event) => {
     const isBookmarked = (event.target.className ===  "bi bi-bookmark mx-2") ? 'bi bi-bookmark-fill mx-2' :'bi bi-bookmark mx-2';
-    event.target.className = isBookmarked;
-    console.log(post)
+    event.target.className = isBookmarked;    
   };
+  
 
   return (
-    <div className="post my-3">
+    <div className="post my-3" style={{backgroundColor:"#e4e4e4"}}>
       <div>
         <h1>{post.name}</h1>
         <p className="text-primary">
@@ -27,12 +28,6 @@ const Post = ({ post }) => {
         <div className="d-flex justify-content-between mt-1  ">
           <div className="mt-2">
             <i
-              className="bi bi-hand-thumbs-up mx-2 "
-              style={{ fontSize: "1.5rem" }}
-              onClick={handleLike}
-            ></i>
-            <i className="bi bi-share mx-2 " style={{ fontSize: "1.5rem" }}></i>
-            <i
               className="bi bi-bookmark mx-2"
               style={{ fontSize: "1.5rem" }}
               onClick={handleBookmark}
@@ -41,20 +36,21 @@ const Post = ({ post }) => {
 
           <div className="d-flex mb-3  ">
             <div className="me-3 mt-2">
-              <a href={post.detailsLink}>
-                <button type="button" class="btn btn-info text-light">
+              <a target="_blank"  className="btn btn-info text-light" href={post.detailsLink} >
+ 
                   More details
-                </button>
+
               </a>
             </div>
 
             <div className="me-2 mt-2">
-              <a href={post.registrationLink}>
-                <button type="button" class="btn btn-info text-light">
+              <a target="_blank" className="btn btn-info text-light" href={post.registrationLink}>
+
                   Register Now
-                </button>
+ 
               </a>
             </div>
+        
           </div>
         </div>
       </div>

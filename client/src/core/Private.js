@@ -60,7 +60,7 @@ const Private = ({ history }) => {
       method: "PUT",
       url: `${process.env.REACT_APP_API}/user/update`,
       data: { name, password },
-      headers: { Authorization: `Bearer ${getCookie("token")}` },
+      headers: { Authorization: `Bearer ${getCookie("token")}` }
     })
       .then((response) => {
         console.log("profile update", response);

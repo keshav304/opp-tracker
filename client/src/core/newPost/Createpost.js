@@ -6,6 +6,7 @@ import "react-toastify/dist/ReactToastify.min.css";
 import dotenv from "dotenv";
 import Layout from "../Layout";
 
+dotenv.config()
 // import { authenticate, isAuth } from "./Helpers";
 
 const Createpost = (props) => {
