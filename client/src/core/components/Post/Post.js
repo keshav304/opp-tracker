@@ -1,10 +1,7 @@
 import React, { useState } from "react";
 import moment from "moment";
 import "./style.css";
-import axios from "axios";
 import dotenv from "dotenv";
-import {getCookie} from "../../../auth/Helpers.js"; 
-import { Link, Route } from "react-router-dom";
 
 dotenv.config()
 
