@@ -45,7 +45,7 @@ const Createpost = (props) => {
     setValues({ ...values, buttonText: "Submitting" });
     axios({
       method: "POST",
-      url: `${process.env.REACT_APP_API}/post`,
+      url: `${process.env.REACT_APP_DEPLOYED_API}/post`,
       data: { name, description, detailsLink, registrationLink, category },
     })
       .then((response) => {

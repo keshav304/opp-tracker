@@ -14,6 +14,9 @@ import ResetPassword from "./auth/ResetPassword";
 
 import Savedpost from "./core/components/savedpost/Savedpost";
 import Createpost from "./core/newPost/Createpost";
+import SawoLogin from "./auth/sawologin/SawoLogin";
+
+
 
 const Routes = () => {
   return (
@@ -25,6 +28,7 @@ const Routes = () => {
         <Route path="/account-activation/:token" exact component={Activate} />
         <Route path="/auth/password/forgot" exact component={ForgotPassword} />
         <Route path="/auth/password/reset/:token" exact component={ResetPassword} />
+        <Route path="/auth/sawo/signin" exact component={SawoLogin} />
         
         <PrivateRoute path="/private" exact component={Private} />
         <PrivateRoute path="/newpost" exact component={Createpost}/>

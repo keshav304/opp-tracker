@@ -2,15 +2,12 @@ import mongoose from "mongoose";
 
 // database schema
 const postSchema = mongoose.Schema({
+  userId: String,
   name: String,
   description: String,
   detailsLink: String,
   registrationLink: String,
   category: String,
-  likeCount: {
-    type: Number,
-    default: 0,
-  },
   createdAt: {
     type: Date,
     default: new Date(),

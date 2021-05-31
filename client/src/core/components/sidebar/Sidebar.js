@@ -19,7 +19,7 @@ function Sidebar(props) {
           <ul>
           <li>My Posts</li>
             <li >
-              <Link to="/bookmarks" style={{color: "#000", textDecoration: "none"}}>Bookmarked Posts</Link>
+              <Link to="/bookmarks" style={{color: "#000", textDecoration: "none"}}>Saved Posts</Link>
             </li>
 
           </ul>

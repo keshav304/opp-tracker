@@ -4,11 +4,14 @@ import Post from "./Post/Post";
 import { CircularProgress } from "@material-ui/core";
 import Pagination from "./pagination/Pagination";
 
+import  dotenv from 'dotenv';
+dotenv.config();
+
 const Posts = (props) => {
   const [posts, setPosts] = useState([]);
   const getPosts = async () => {
     try {
-      const userPosts = await axios.get(`${process.env.REACT_APP_API}/post`);
+      const userPosts = await axios.get(`${process.env.REACT_APP_DEPLOYED_API}/post`);
       setPosts(userPosts.data.reverse()); // set State
     } catch (err) {
       console.error(err.message);

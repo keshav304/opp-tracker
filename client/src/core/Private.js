@@ -22,7 +22,7 @@ const Private = ({ history }) => {
     try {
       // fet the logged in user data
       const { data: userDetails } = await axios.get(
-        `${process.env.REACT_APP_API}/user/${isAuth()._id}`,
+        `${process.env.REACT_APP_DEPLOYED_API}/user/${isAuth()._id}`,
         { headers: { Authorization: `Bearer ${getCookie("token")}` } }
       );
 
